@@ -31,11 +31,20 @@ element is pinned by pixel coordinates rather than flowing naturally. Treat this
 better long-term base if you want to edit the design freely.
 
 ## To-do before fully cutting over from GoDaddy
+- **DONE (2026-07-09)** — Domain repointed: apex `A` records + `www` now point to
+  GitHub Pages; apex→www redirect works; site is live over HTTP. Remaining: wait for
+  GitHub to provision the HTTPS certificate, then tick "Enforce HTTPS" in Settings →
+  Pages. (If the cert stalls >24h, remove + re-add the custom domain to re-trigger it.)
 - Update the `og:image` meta tags (one per page) to full absolute URLs once the site
   has a final home (e.g. `https://hamptonhounds.co.uk/images/salon-interior.jpg`) —
   they're currently relative paths, which works for browsers but not reliably for
   social-media link previews
 - Check whether any page has a working contact form — if so, it's likely wired to a
   GoDaddy backend endpoint that will stop working once the plan is cancelled
-- The `info@hamptonhounds.co.uk` inbox needs a replacement hosting solution before
-  cancelling GoDaddy
+- The `info@hamptonhounds.co.uk` inbox is **Microsoft 365 / Outlook** (MX →
+  `hamptonhounds-co-uk.mail.protection.outlook.com`), and appears to have been
+  provisioned **through GoDaddy** (`secureserver.net`, `_domainconnect.gd`, and
+  `NETORGFT…onmicrosoft.com` records). Before cancelling GoDaddy, confirm whether the
+  Microsoft 365 subscription is billed via GoDaddy — if so it must be transferred or
+  re-provisioned, or the inbox goes dark. **Do not delete the email DNS records**
+  (`MX`, the SPF `TXT`, `autodiscover`, `msoid`, `email`).
