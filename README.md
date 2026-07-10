@@ -1,50 +1,39 @@
 # Hampton Hounds website
 
-Mirrored from the original GoDaddy Website Builder site, cleaned up, and flattened
-for GitHub Pages hosting.
+The live website for **Hampton Hounds Grooming** — boutique dog & cat grooming in
+Hampton Village. A modern, responsive, single-page site hosted free on GitHub Pages.
+
+**Live at:** https://www.hamptonhounds.co.uk
 
 ## Structure
-- `index.html`, `about-us.html`, `our-salon.html`, `our-services.html`, `location.html` — pages
-- `images/` — all photos, renamed from GoDaddy's hashed filenames to descriptive ones
-- `site.css` — GoDaddy's Website Builder engine stylesheet (layout depends on it — don't delete)
+- `index.html` — the entire site (single-page, self-contained: all CSS is inline in a
+  `<style>` block; a small inline script handles the sticky header; the social feed and
+  Google map load from external embeds)
+- `images/` — logo assets (`logo-white.png` / `logo-black.png` are processed transparent
+  versions; `hh-logo.jpg` is the original) and `images/new-web/` (the optimised photos
+  actually used on the site)
+- `CNAME` — custom domain (`www.hamptonhounds.co.uk`)
+- `.nojekyll` — tells GitHub Pages to serve files as-is
+- `images/New website photos/` — original full-size source photos (HEIC/JPG). **Git-ignored**
+  (not deployed) — kept locally as the source for optimisation.
 
-## What was cleaned up
-- Removed the GoDaddy attribution badge
-- Removed dead tracking scripts (GoDaddy's own traffic analytics, and a Universal
-  Analytics snippet that stopped working when Google sunset UA in 2023)
-- Removed the `duel.js` builder runtime and its loader config — it only powered two
-  edge-case behaviours (an IE-specific background fix, and a hidden "force desktop
-  view" toggle) that aren't needed
-- Removed ~22 unused decorative `@font-face` declarations (Allura, Pacifico,
-  Sacramento, etc.) — confirmed none were actually applied anywhere; kept Josefin Sans,
-  the only font actually in use
-- Consolidated the duplicate `home.html` (identical to `index.html`) into one file
-- Renamed every image from GoDaddy's hashed filename + query string to something
-  readable, and moved them into `images/`
+## Hosting / DNS
+- **GitHub Pages** from the `main` branch, root. Pushing to `main` deploys automatically.
+- Custom domain + HTTPS (Let's Encrypt, "Enforce HTTPS" on). DNS at GoDaddy: apex `A`
+  records → GitHub Pages IPs (`185.199.108–111.153`), `www` CNAME → `tomjonesxx.github.io`.
+- **Email** (`info@hamptonhounds.co.uk`) is **Microsoft 365**, provisioned via GoDaddy —
+  its DNS records (`MX`, SPF `TXT`, `autodiscover`, `msoid`) must not be touched.
 
-## Known limitation
-This site uses a fixed-width (997px), absolutely-positioned layout — GoDaddy's legacy
-"Website Builder 7" canvas format, not a modern responsive layout. It renders correctly
-as static HTML/CSS but isn't easily hand-editable or drag-and-drop friendly, since every
-element is pinned by pixel coordinates rather than flowing naturally. Treat this as the
-"preserve what's live and get off GoDaddy's bill" version — a from-scratch rebuild is a
-better long-term base if you want to edit the design freely.
+## Editing
+- **Content/design:** edit `index.html` directly.
+- **Adding photos:** optimise new images into `images/new-web/` before use — convert
+  HEIC→JPEG, apply EXIF rotation, resize longest edge to ≤2000px, quality ~82 (keeps files
+  small and browser-compatible). Reference them with root-absolute paths (`/images/new-web/…`).
+- **Social feed:** the "Follow the pack" section is a [Curator.io](https://curator.io)
+  combined Instagram + Facebook feed (embed div + loader script near `</body>`). It
+  auto-updates from approved posts in the Curator dashboard — no code changes needed to
+  refresh content.
 
-## To-do before fully cutting over from GoDaddy
-- **DONE (2026-07-09)** — Domain repointed: apex `A` records + `www` now point to
-  GitHub Pages; apex→www redirect works; site is live over HTTP. Remaining: wait for
-  GitHub to provision the HTTPS certificate, then tick "Enforce HTTPS" in Settings →
-  Pages. (If the cert stalls >24h, remove + re-add the custom domain to re-trigger it.)
-- Update the `og:image` meta tags (one per page) to full absolute URLs once the site
-  has a final home (e.g. `https://hamptonhounds.co.uk/images/salon-interior.jpg`) —
-  they're currently relative paths, which works for browsers but not reliably for
-  social-media link previews
-- Check whether any page has a working contact form — if so, it's likely wired to a
-  GoDaddy backend endpoint that will stop working once the plan is cancelled
-- The `info@hamptonhounds.co.uk` inbox is **Microsoft 365 / Outlook** (MX →
-  `hamptonhounds-co-uk.mail.protection.outlook.com`), and appears to have been
-  provisioned **through GoDaddy** (`secureserver.net`, `_domainconnect.gd`, and
-  `NETORGFT…onmicrosoft.com` records). Before cancelling GoDaddy, confirm whether the
-  Microsoft 365 subscription is billed via GoDaddy — if so it must be transferred or
-  re-provisioned, or the inbox goes dark. **Do not delete the email DNS records**
-  (`MX`, the SPF `TXT`, `autodiscover`, `msoid`, `email`).
+## History
+This replaced a flattened mirror of the old GoDaddy Website Builder site (retired
+2026-07-10). That old site is preserved in git history if ever needed.
