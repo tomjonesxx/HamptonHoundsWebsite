@@ -379,7 +379,19 @@
       <img src="/images/new-web/img-3669-3.jpg" alt="Thiago, our resident cat whisperer, with a happy long-haired cat">
       <img src="/images/new-web/img-5828.jpg" alt="A West Highland terrier being groomed at Hampton Hounds">
     </div>
-    <div class="social-btns" style="margin-top:44px">
+  </div>
+</section>
+
+<!-- SOCIAL / LIVE FEED -->
+<section class="social" id="social">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow">Say hello</div>
+      <h2>Follow the pack</h2>
+      <p class="lead">Straight from our Instagram and Facebook — the latest makeovers and happy clients at the salon.</p>
+    </div>
+    <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+    <div class="social-btns" style="margin-top:40px">
       <a class="btn btn-primary" href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">Follow on Instagram</a>
       <a class="btn btn-dark" href="https://www.facebook.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">Follow on Facebook</a>
     </div>
@@ -428,6 +440,16 @@
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>60);
   window.addEventListener('scroll',onScroll);onScroll();
+</script>
+
+<!-- Curator.io combined Instagram + Facebook feed -->
+<script type="text/javascript">
+/* curator-feed-default-feed-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/4edbf206-b45e-4c55-bccd-321becafb496.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
 </script>
 </body>
 </html>
