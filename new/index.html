@@ -181,16 +181,11 @@
 
   /* social */
   .social{background:var(--cream)}
-  .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
-  @media(max-width:820px){.social-grid{grid-template-columns:1fr;gap:52px}}
-  .social-head{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-  .social-name{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--forest)}
-  .social-handle{font-size:.78rem;letter-spacing:.06em;color:var(--brass)}
-  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
+  .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:36px}
   .ig-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;transition:.3s;display:block}
   .ig-grid a:hover img{filter:brightness(1.08)}
-  .fb-embed{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff}
-  .fb-embed iframe{width:100%;min-height:560px;border:0;display:block}
+  @media(max-width:820px){.ig-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
+  .social-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
   /* contact */
   .contact{background:var(--forest);color:#fff}
@@ -395,34 +390,19 @@
       <h2>Follow the pack</h2>
       <p class="lead">We share our favourite makeovers, happy clients and salon moments most days — come and say hi.</p>
     </div>
-    <div class="social-grid">
-      <div>
-        <a class="social-head" href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">
-          <span class="social-name">Instagram</span>
-          <span class="social-handle">@hamptonhoundsgrooming</span>
-        </a>
-        <div class="ig-grid">
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-2438.jpg" alt="Groomed cockapoo"></a>
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-pom-towel.jpg" alt="Pomeranian in a towel"></a>
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-5536.jpg" alt="Groomed long-haired cat"></a>
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-3634.jpg" alt="Yellow Labrador"></a>
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-5579.jpg" alt="Happy terrier on the grooming table"></a>
-          <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-2506.jpg" alt="Scruffy terrier after grooming"></a>
-        </div>
-        <a class="btn btn-dark" href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">Follow on Instagram</a>
-      </div>
-      <div>
-        <a class="social-head" href="https://www.facebook.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">
-          <span class="social-name">Facebook</span>
-          <span class="social-handle">hamptonhoundsgrooming</span>
-        </a>
-        <div class="fb-embed">
-          <iframe title="Hampton Hounds on Facebook"
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhamptonhoundsgrooming&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-            scrolling="no" frameborder="0" allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </div>
-      </div>
+    <div class="ig-grid">
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-2438.jpg" alt="Groomed cockapoo"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-pom-towel.jpg" alt="Pomeranian in a towel"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-5536.jpg" alt="Groomed long-haired cat"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-3634.jpg" alt="Yellow Labrador"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-5579.jpg" alt="Happy terrier on the grooming table"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-2410.jpg" alt="Groomed doodle"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-2506.jpg" alt="Scruffy terrier after grooming"></a>
+      <a href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener"><img src="/images/new-web/img-5828.jpg" alt="A West Highland terrier being groomed"></a>
+    </div>
+    <div class="social-btns">
+      <a class="btn btn-primary" href="https://www.instagram.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a class="btn btn-dark" href="https://www.facebook.com/hamptonhoundsgrooming/" target="_blank" rel="noopener">Follow on Facebook</a>
     </div>
   </div>
 </section>
